@@ -1,5 +1,6 @@
 package launcher;
 
+import java.awt.Color;
 import java.io.File;
 
 public class Configuration {
@@ -23,4 +24,7 @@ public class Configuration {
 	 * Links
 	 */
 	public static final String FORUM_URL = "http://edgeville.org/";
+
+	public static final Color PROGRESSBAR_COLOR = Color.decode("0x0079C0");
+	public static final Color BACKGROUND_COLOR = Color.decode("0x323232");
 }

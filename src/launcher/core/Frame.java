@@ -28,26 +28,26 @@ public class Frame extends JFrame {
 	public static final int BUTTON_HEIGHT = 60;
 	public static JButton btnUpdate = new Button("Fetch Update", new Rectangle(BUTTON_X + X_DIFF, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT));
 	public static JProgressBar progressBar;
-	
+
 	public static boolean downloadingClient = false;
 
 	public static final int FRAME_WIDTH = 358;
 	public static final int FRAME_HEIGHT = 200;
-	
+
 	public Frame() {
 		setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
 		setTitle(Configuration.TITLE);
-		//setIconImage(Utility.getImage("icon.png"));
+		// setIconImage(Utility.getImage("icon.png"));
 	}
-	
+
 	public void close() {
 		dispose();
 	}
 
 	public void init() {
 		setup();
-		//setBackground();
-
+		// setBackground();
+		this.getContentPane().setBackground(Configuration.BACKGROUND_COLOR);
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -60,10 +60,12 @@ public class Frame extends JFrame {
 
 	public void setup() {
 		add(new Button("Play Now", new Rectangle(BUTTON_X, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT)));
-		//add(btnUpdate);
+		// add(btnUpdate);
 		add(new Button("Forum", new Rectangle(BUTTON_X + X_DIFF, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT)));
-		//add(new Button("Store", new Rectangle(BUTTON_X + (3 * X_DIFF), BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT)));
-		//add(new Button("Vote", new Rectangle(BUTTON_X + (4 * X_DIFF), BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT)));
+		// add(new Button("Store", new Rectangle(BUTTON_X + (3 * X_DIFF),
+		// BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT)));
+		// add(new Button("Vote", new Rectangle(BUTTON_X + (4 * X_DIFF),
+		// BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT)));
 
 		label.setBounds(50, 150, 500, 50);
 		label.setForeground(new Color(116, 118, 120));
@@ -78,7 +80,9 @@ public class Frame extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.GRAY);
-		//progressBar.setForeground(Color.decode("0x049a04"));
+
+		progressBar.setForeground(Configuration.PROGRESSBAR_COLOR);
+
 		add(progressBar, BorderLayout.SOUTH);
 
 	}
